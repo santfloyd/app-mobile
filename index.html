@@ -1,0 +1,103 @@
+<!DOCTYPE HTML>
+
+<html>
+
+	<head>
+		<title>Photography geolocation</title>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+		
+		<link rel="stylesheet" type="text/css" href="./css/app.css"></>
+		<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"></>
+		<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.1/leaflet.css"></>
+		
+		
+		
+
+	</head>
+
+	<body onload="onDeviceReady()">
+		<div class="gui">
+
+			<!--mapa-->
+			<div id="map">
+				<p id="location-text"></p>
+			</div>
+
+			<!--mostrar la imagen que sea cargada-->
+			<div id="display-image">
+				<div class="image"></div>
+			</div>
+
+			<!--menu inferior con los botones-->
+			<div id="menu">
+				<!--boton para seleccionar la imagen-->
+				 <div class="image-upload">
+					<label for="image-button">
+						<img src="./icons/upload-image.png"/>
+					</label>
+					
+					<input type="file" id="image-button" accept="image/png,image/jpeg,image/jpg" hidden/>
+					<!--<img id='output' style="height:100px; width:100px;">-->
+					
+				</div> 
+			
+				<!--boton para leer los datos exif (actualmente la función no muestra los datos)-->
+				 <!-- <div class="image">
+					<label for="show-image-button">
+						<img src="./icons/image-48.png"/>
+					</label>
+					<button id="show-image-button" onclick="getExif()"></button>
+
+					<p id="status"></p> -->
+								
+					
+					
+				<!-- </div> -->
+				 <!-- boton para transformación de coordenadas (actualmente la función sirve en local, pero no en browser)-->
+				<div id="coordenadas" class="coordinate-calculator" onclick="markPoint()"> 
+					<label for="coordenadas">
+						<img src="./icons/satellite.png"/>
+					</label>
+				</div> 
+				<span style="display: inline-block; width: 40px;"></span>
+			</div> 
+
+			
+			
+		</div>
+       		
+	</body>
+	<script language="javascript" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.1/leaflet.js"></script>
+	<script language="javascript" type="text/javascript" src="js/app.js"></script>
+	<!-- inicio de funcion EXIF-->
+	<h2>Imagen y metadatos</h2>
+    
+    <!--<img src="IMG_20200222_154426.jpg" class="DisplayImage"  alt="" height="260px"/>-->
+    <!--<img src="angular.png" class="DisplayImage"  alt="" height="260px"/>-->
+	<input type="file" id="image-button" accept="image/png,image/jpeg,image/jpg" onclick="readImage()" hidden/>
+    <img src="" class="" id="preview"  alt="Uploaded image" height="260px"/><br>
+    
+       
+<div class="details">
+	<aside>
+		<i>Detalles</i>
+    <p>Latitude : <span id="Lati"></span> </p>
+    <p>Longitude : <span id="Long"></span></p>
+    <p>Camera Model / Maker : <span id="cmm"></span></p>
+    <p>Height x Width : <span id="resolution"></span></p>
+    <p>Capture Time : <span id="datetime"></span></p>
+    <p>ISO SpeedRatings : <span id="iso"></span></p>
+    <p>Shuttor Speed : <span id="stp"></span></p>
+	</aside>
+</div>
+
+	<!-- Fin de funcion Exif-->
+	
+	<script src="https://cdn.jsdelivr.net/npm/exif-js"></script>
+
+	
+		
+	
+
+</html>
