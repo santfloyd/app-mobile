@@ -1,0 +1,90 @@
+ 
+* {
+	padding: 0;
+	margin: 0;
+}
+
+body {
+	background: #C8C8C8;
+	color: black;
+	font: 10pt Helvetica, Arial, sans-serif;
+	font-weight: bold;
+}
+
+/* CSS comment */
+
+
+html, body {
+	height: 100vh; /* v=visual port, h=height */
+	width: 100vw; /* v=visual port, w=width */
+}
+
+
+
+.gui {
+	height: 100vh;
+	width: 100vw;
+}
+
+#map {
+	height: 100%;
+    width: 100%;
+	z-index: 0;
+}
+
+#menu {
+	position: fixed;
+	bottom: 0;
+	height: 56px;
+	width: 100%;
+	line-height: 56px;
+	background-color: rgb(130, 137, 238);
+	display: flex;
+	font-size: 40px;
+	align-items: center;
+	justify-content: space-evenly;
+	
+}
+
+aside {
+	clear: both;
+	display:block;
+	width: 35%;
+	margin: 5px;
+	padding: 24px;
+	padding-left: 30px;
+	padding-right: 30px;
+	font-style: italic;
+	background-color: lightgray;
+  }
+
+.image-upload {
+	
+	bottom: 56px;
+	height: 40px;
+	width: 100%;
+	background-color: transparent;
+	display: inline-block;
+	align-items: center;
+	text-align: center;
+}
+
+.image{
+	bottom: 56px;
+	height: 40px;
+	width: 100%;
+	background-color: transparent;
+	display: inline-block;
+	align-items: center;
+	text-align: center;
+}
+
+.coordinate-calculator{
+	bottom: 56px;
+	height: 40px;
+	width: 100%;
+	background-color: transparent;
+	display: inline-block;
+	align-items: center;
+	text-align: center;
+}
